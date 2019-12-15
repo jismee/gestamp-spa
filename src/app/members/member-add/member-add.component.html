@@ -1,0 +1,66 @@
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-sm-4">
+            <h1>Update sale</h1>
+        </div>
+        <div class="col-sm-8">
+            <div *ngIf="addForm.dirty" class="alert alert-info">
+                <strong>Information:</strong> You have mode chages. Any unsaved changes will be lost!
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-4">
+            <div class="card">
+                <div class="card-body">
+                    <div>
+                        <strong>Information about adding:</strong>
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum illum corrupti fuga aliquam aspernatur, temporibus nemo voluptates repudiandae beatae possimus a voluptate, quae, error debitis quidem. Laborum doloribus dolore quia.
+                        </p>
+                    </div>
+
+                </div>
+                <div class="card-footer">
+                    <button [disabled]="!addForm.dirty" form="addForm" class="btn btn-success btn-block">Save Changes</button>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-8">
+            <div class="tab-panel">
+
+                <form #addForm="ngForm" id="addForm" (ngSubmit)="addSale(addForm)">
+                    <h4>Region</h4>
+                    <input class="form-control" type="text" name="region" ngModel>
+                    <h4>Country</h4>
+                    <input class="form-control" type="text" name="country" ngModel>
+                    <h4>Item Type</h4>
+                    <input class="form-control" type="text" name="itemType" ngModel>
+                    <h4>Sale channel</h4>
+                    <input class="form-control" type="text" name="country" ngModel>
+                    <h4>Order date</h4>
+                    <input class="form-control" type="text" name="orderDate" ngModel>
+                    <h4>Order Id</h4>
+                    <input class="form-control" type="text" name="orderId" ngModel>
+                    <h4>Order Priority</h4>
+                    <input class="form-control" type="text" name="orderPriority" ngModel>
+                    <h4>Ship Date</h4>
+                    <input class="form-control" type="text" name="shipDate" ngModel>
+                    <h4>Units Sold</h4>
+                    <input class="form-control" type="text" name="unitsSold" ngModel>
+                    <h4>Unit Price</h4>
+                    <input class="form-control" type="text" name="unitPrice" ngModel>
+                    <h4>Unit Cost</h4>
+                    <input class="form-control" type="text" name="unitCost" ngModel>
+                    <h4>Total Revenue</h4>
+                    <input class="form-control" type="text" name="totalRevenue" ngModel>
+                    <h4>Total Cost</h4>
+                    <input class="form-control" type="text" name="totalCost" ngModel>
+                    <h4>Total Profit</h4>
+                    <input class="form-control" type="text" name="totalProfit" ngModel>
+                </form>
+
+            </div>
+        </div>
+    </div>
+</div>

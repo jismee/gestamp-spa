@@ -1,0 +1,28 @@
+<div class="card mb-4">
+
+    <div class="card-body p-1">
+        <div class="card-img-wrapper">
+
+            <h6 class="card-tittle text-center mb-1"><i class="fa fa-globe fa-2x"></i>
+                <hr>
+                <p class="card-text text-muted text-center"><b>Region: </b>{{sale.region}}, <b>Country: </b>{{sale.country}}</p>
+                <p class="card-text text-muted text-center">Order Priority: {{sale.orderPriority}}</p>
+                <p class="card-text text-muted text-center"><b>Sale Channel: </b>{{sale.saleChannel}}, <b>Order Priority: </b>{{sale.orderPriority}}</p>
+                <p class="card-text text-muted text-center">Order Date: {{sale.orderDate}}</p>
+                <p class="card-text text-muted text-center">Ship Date: {{sale.shipDate}}</p>
+            </h6>
+            <hr>
+            <p class="card-text text-muted text-center">Totals</p>
+            <ul class="list-inline member-icons animate text-center">
+                <li class="list-inline-item"><button class="btn btn-primary" [routerLink]="['/member/', sale.id]" routerLinkActive="router-link-active"><i class="fa fa-edit"></i></button></li>
+                <li class="list-inline-item"><button class="btn btn-danger" (click)="removeSale(sale.id)"><i class="fa fa-trash"></i></button></li>
+            </ul>
+
+        </div>
+    </div>
+    <div class="card-footer">
+        <p class="card-text text-muted text-center">Revenue: {{sale.totalRevenue}}</p>
+        <p class="card-text text-muted text-center">Cost: {{sale.totalCost}}</p>
+        <p class="card-text text-muted text-center">Profit: {{sale.totalProfit}}</p>
+    </div>
+</div>

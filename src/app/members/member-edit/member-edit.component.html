@@ -1,0 +1,72 @@
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-sm-4">
+            <h1>Update sale</h1>
+        </div>
+        <div class="col-sm-8">
+            <div *ngIf="editForm.dirty" class="alert alert-info">
+                <strong>Information:</strong> You have mode chages. Any unsaved changes will be lost!
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-4">
+            <div class="card">
+                <div class="card-body">
+                    <div>
+                        <strong>Locations:</strong>
+                        <p>{{sale.region}}, {{sale.country}}</p>
+                    </div>
+                    <div>
+                        <strong>Item Type:</strong>
+                        <p>{{sale.itemType}}</p>
+                    </div>
+                    <div>
+                        <strong>Sale channel:</strong>
+                        <p>{{sale.saleChannel}}</p>
+                    </div>
+                    <div>
+                        <strong>Order date:</strong>
+                        <p>{{sale.orderDate | date:'dd MMMM yyyy'}}</p>
+                    </div>
+                    <div>
+                        <strong>Order Id:</strong>
+                        <p>{{sale.orderId}}</p>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <button [disabled]="!editForm.dirty" form="editForm" class="btn btn-success btn-block">Save Changes</button>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-8">
+            <div class="tab-panel">
+                <tabset class="member-tabset">
+                    <tab heading="Edit Profile">
+                        <form #editForm="ngForm" id="editForm" (ngSubmit)="updateSale()">
+                            <h4>Order Priority</h4>
+                            <input class="form-control" type="text" name="orderPriority" [(ngModel)]="sale.orderPriority">
+                            <h4>Ship Date</h4>
+                            <input class="form-control" type="text" name="shipDate" [(ngModel)]="sale.shipDate">
+                            <h4>Units Sold</h4>
+                            <input class="form-control" type="text" name="unitsSold" [(ngModel)]="sale.unitsSold">
+                            <h4>Unit Price</h4>
+                            <input class="form-control" type="text" name="unitPrice" [(ngModel)]="sale.unitPrice">
+                            <h4>Unit Cost</h4>
+                            <input class="form-control" type="text" name="unitCost" [(ngModel)]="sale.unitCost">
+                            <h4>Total Revenue</h4>
+                            <input class="form-control" type="text" name="totalRevenue" [(ngModel)]="sale.totalRevenue">
+                            <h4>Total Cost</h4>
+                            <input class="form-control" type="text" name="totalCost" [(ngModel)]="sale.totalCost">
+                            <h4>Total Profit</h4>
+                            <input class="form-control" type="text" name="totalProfit" [(ngModel)]="sale.totalProfit">
+
+                        </form>
+
+                    </tab>
+
+                </tabset>
+            </div>
+        </div>
+    </div>
+</div>

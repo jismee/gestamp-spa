@@ -1,0 +1,24 @@
+<div class="container mt-5">
+    <div *ngIf="!registerMode" style="text-align: center;">
+        <h1>Sales application</h1>
+        <p class="lead">Come on in to view your sales... All you need to do is segin up!</p>
+        <div class="text-center">
+            <button class="btn btn-primary btn-lg mr-2" (click)="registerToggle()">Register</button>
+        </div>
+    </div>
+    <!-- 
+    Formulario de registro del home 
+    con el *ngIf se controla su visualización
+    con un evento emitido desde el hijo hacia el padre
+  -->
+    <div *ngIf="registerMode" class="continer">
+        <div class="row justify-content-center">
+            <div class="col-4">
+                <app-register (cancelRegister)="cancelRegisterMode($event)"></app-register>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- 
+<p *ngFor="let value of values">{{value.name}}</p>
+-->
